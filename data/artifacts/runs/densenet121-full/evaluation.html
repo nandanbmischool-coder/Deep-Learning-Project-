@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><title>PneumoVision AI - Evaluation report</title>
+<style>body{font-family:system-ui,sans-serif;max-width:820px;margin:2rem auto;color:#12222a}table{border-collapse:collapse;margin:1rem 0}
+td,th{border:1px solid #c9d3d6;padding:.35rem .7rem;text-align:left}th{background:#eef3f3}</style></head><body>
+<h1>PneumoVision AI - Evaluation report</h1><p>Split: <b>test</b> &middot; n = 624 &middot; positive class: PNEUMONIA &middot;
+threshold 0.601 (maximises Youden&#x27;s J (sensitivity + specificity - 1) on the validation set; test set not used)</p>
+<h2>Metrics (95% bootstrap CI)</h2><table><tr><th>Metric</th><th>Value</th><th>95% CI</th></tr><tr><td>accuracy</td><td>0.8574</td><td>[0.832, 0.883]</td></tr><tr><td>precision</td><td>0.8155</td><td>[0.782, 0.850]</td></tr><tr><td>recall</td><td>0.9974</td><td>[0.992, 1.000]</td></tr><tr><td>specificity</td><td>0.6239</td><td>[0.563, 0.683]</td></tr><tr><td>f1</td><td>0.8973</td><td>[0.876, 0.918]</td></tr><tr><td>roc_auc</td><td>0.9701</td><td>[0.956, 0.982]</td></tr><tr><td>pr_auc</td><td>0.9776</td><td>[0.960, 0.989]</td></tr></table>
+<h2>Confusion matrix</h2><table><tr><th></th><th>Pred NORMAL</th><th>Pred PNEUMONIA</th></tr>
+<tr><th>True NORMAL</th><td>TN 146</td><td>FP 88</td></tr><tr><th>True PNEUMONIA</th><td>FN 1</td><td>TP 389</td></tr></table>
+<h2>Per-class report</h2><table><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr><tr><td>NORMAL</td><td>0.9932</td><td>0.6239</td><td>0.7664</td><td>234</td></tr><tr><td>PNEUMONIA</td><td>0.8155</td><td>0.9974</td><td>0.8973</td><td>390</td></tr><tr><td>macro avg</td><td>0.9044</td><td>0.8107</td><td>0.8319</td><td>624</td></tr><tr><td>weighted avg</td><td>0.8821</td><td>0.8574</td><td>0.8482</td><td>624</td></tr></table>
+<p>Parameters: 6,955,906 &middot; size 26.53 MB &middot; median latency
+213.6 ms (cpu, batch 1).</p>
+<p><i>Research use only; not a clinically validated device. Created 2026-10-29T11:52:59.826815+00:00.</i></p></body></html>

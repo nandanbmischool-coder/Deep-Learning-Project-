@@ -1,0 +1,28 @@
+# Optional reproducible setup:   docker compose up --build
+# With PostgreSQL:               docker compose --profile postgres up --build
+#   (then set DATABASE_URL=postgresql+psycopg://pneumovision:<POSTGRES_PASSWORD>@db:5432/pneumovision in .env)
+services:
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    env_file: [.env]
+    environment:
+      ENVIRONMENT: production      # requires SECRET_KEY in .env
+      COOKIE_SECURE: "false"       # set "true" once the app is served over HTTPS
+      CORS_ORIGINS: http://localhost:8080
+    volumes:
+      - ./data:/app/data           # database, media, checkpoints and the dataset live here
+    expose: ["8000"]
+  frontend:
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    ports: ["8080:80"]
+    depends_on: [backend]
+  db:
+    image: postgres:16-alpine
+    profiles: [postgres]
+    environment:
+      POSTGRES_DB: pneumovision
+      POSTGRES_USER: pneumovision
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes: [pgdata:/var/lib/postgresql/data]
+volumes:
+  pgdata:

@@ -1,0 +1,26 @@
+{
+  "method": "stratified group split (patient id parsed from file names)",
+  "seed": 42,
+  "val_fraction": 0.15,
+  "counts": {
+    "train": {
+      "NORMAL": 1149,
+      "PNEUMONIA": 3322
+    },
+    "val": {
+      "NORMAL": 192,
+      "PNEUMONIA": 553
+    },
+    "test": {
+      "NORMAL": 234,
+      "PNEUMONIA": 390
+    }
+  },
+  "train_images_removed_as_exact_duplicates_of_val_or_test": 0,
+  "patient_group_overlap": {
+    "train_val": 0,
+    "train_test": 222,
+    "val_test": 42
+  },
+  "note": "Patient identifiers are parsed from Kaggle file names on a best-effort basis; true patient-level separation cannot be fully verified without metadata. The official test split is never used for training."
+}

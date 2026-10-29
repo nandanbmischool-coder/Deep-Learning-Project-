@@ -1,0 +1,43 @@
+{
+  "version": "densenet121-full",
+  "architecture": "densenet121",
+  "pretrained": true,
+  "pretrained_source": "torchvision ImageNet (IMAGENET1K_V1)",
+  "class_to_idx": {
+    "NORMAL": 0,
+    "PNEUMONIA": 1
+  },
+  "positive_class": "PNEUMONIA",
+  "threshold": 0.6010417342185974,
+  "threshold_method": "maximises Youden's J (sensitivity + specificity - 1) on the validation set; test set not used",
+  "cam_layer": "features.denseblock4",
+  "image_size": 224,
+  "parameter_count": 6955906,
+  "model_size_mb": 26.53,
+  "best_epoch": 18,
+  "training_seconds": 28992.0,
+  "total_seconds": 29253.6,
+  "seed": 42,
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "training_args": {
+    "arch": "densenet121",
+    "epochs": 20,
+    "head_epochs": 5,
+    "batch_size": 32,
+    "lr": 0.001,
+    "finetune_lr": 0.0001,
+    "fine_tune_mode": "last_block",
+    "patience": 5,
+    "seed": 42,
+    "val_fraction": 0.15,
+    "horizontal_flip": false,
+    "pretrained": true,
+    "weights_path": null,
+    "max_images_per_class": null,
+    "num_workers": 0,
+    "dataset_dir": null,
+    "version": "densenet121-full"
+  },
+  "created_at": "2026-10-29T11:53:10.927643+00:00"
+}

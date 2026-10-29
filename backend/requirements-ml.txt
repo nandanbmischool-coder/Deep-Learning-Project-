@@ -1,0 +1,4 @@
+# PyTorch is installed separately because the right build depends on your machine (CPU / CUDA).
+# Tested: torch 2.14.1 + torchvision 0.29.1 (CPU build). See README for the selector command.
+torch==2.14.1
+torchvision==0.29.1
